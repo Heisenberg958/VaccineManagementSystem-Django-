@@ -1,0 +1,65 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}
+Find Slot
+{% endblock title %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 bg-light mt-5 mb-5" >
+        
+        {% if status %}
+        <h2 class='text-center text-white bg-dark'>Succefully Booked Your Slot</h2>
+        <table class='table table-bordered'>
+          <tr><th>Slot Reference Number </th><td  >{{sb.id}}</td></tr>
+          <tr><th>Centre</th><td  >{{centre.id}} {{centre.name}} <br> {{centre.location}}, {{centre.district}} - {{centre.pin}}</td></tr>
+        <tr><th>Vaccine Type </th><td  >{{sb.dose_name}}</td></tr>
+        <tr><th>Slot Date </th><td  >{{sb.slot_date}}</td></tr>
+        <tr><th>Slot Timing </th><td  >{{sb.slot_time}}</td></tr>  
+        <tr><th>Candidate Name </th><td  >{{sb.name}}</td></tr>
+        <tr><th>Candidate Age </th><td  >{{sb.age}}</td></tr>
+        <tr><th>Candidate Gender </th><td  >{{sb.gender}}</td></tr>
+        <tr><th>Candidate Phone </th><td  >{{sb.contacts}}</td></tr>
+        <tr><th>ID Proof Type </th><td  >{{sb.id_proof_type}}</tr>
+        <tr><th>ID Proof Number </th><td  >{{sb.id_proof_number}}</td></tr>
+      </table>
+
+        {% else %}
+       <h1 class="text-center text-success">Get Your Slot Status</h1>
+ 
+        <form method="post">
+          {% csrf_token %}
+          <div class="mb-3 mt-3">
+
+            <label class='btn'><input type="radio" name="by" value="slotno" checked> By Slot Number</label>          
+            <label  class='btn'><input type="radio" name="by" value="phone"> By Phone</label>
+         </div>
+            <div class="mb-3 mt-3">
+               <h5>Slot Number / Phone</h5>
+              <input required type="number"  class="form-control" placeholder="Enter Slot Number or Phone" name="slotno">
+            </div>
+            <div class="mb-3">
+              <h6>Date</h6>
+              <input type="date" name="date" required class="form-control">
+            </div>
+            <div class="mb-3">
+              <h6>Id Proof Number</h6>
+              <input type="text" name="id_proof_number" required class="form-control">
+            </div>
+                       
+            <button type="submit" class="btn btn-success form-control">Get Status</button>
+          </form>
+        
+          <h4 class="text-center m-4 text-danger">{{msg}}</h4>
+
+        {% endif %}
+        
+         
+    </div>
+    
+</div>
+   
+</div>
+
+{% endblock content %}

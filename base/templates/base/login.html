@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}
+Login
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6 bg-light mt-5 mb-5" >
+          <h1 class="text-center text-success">CENTRE LOGIN</h1>
+          <form method="post">
+            {% csrf_token %}
+          <div class="mb-3 mt-3">
+                 <h5>Employee Id</h5>
+                <input type="number" required class="form-control" placeholder="Enter User Id" name="userid">
+              </div>
+              <div class="mb-3">
+              <h6>Password</h6>
+              <input type="password" required class="form-control" id="pwd" placeholder="Enter password" name="password">
+              </div>
+             
+              <button type="submit" class="btn btn-primary mx-auto d-block">Login</button>
+            </form>
+            <h4 class="text-center m-4 text-danger">{{msg}}</h4>
+      </div>
+      
+  </div>
+</div>
+{% endblock content %}

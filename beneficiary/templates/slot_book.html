@@ -1,0 +1,65 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 bg-light mt-5 mb-5" >
+
+
+{% if sb  == 0  %}
+<h2 class='text-center text-white bg-dark'>Book Slot</h2>
+<form method="post">
+  <table class='table table-bordered'>
+    <tr><th>Centre</th><td colspan='4' >{{centre.id}} {{centre.name}} <br> {{centre.location}}, {{centre.district}} - {{centre.pin}}</td></tr>
+    <tr><th>Vaccine Type </th><td  colspan='4'>{{vaccine}}</td></tr>
+    <tr><th>Slot Date </th><td  colspan='4'>{{date}}</td></tr>
+    <tr><th>Slot Timing </th><td  colspan='4'>{{slot}}</td></tr>
+    
+    <tr><th>Candidate Name </th><td  colspan='4'><input type='name' name='name' required class='form-control' placeholder='Name'></td></tr>
+    <tr><th>Candidate Age </th><td  colspan='4'><input type='number' name='age' required class='form-control' placeholder='Age'></td></tr>
+    <tr><th>Candidate Gender </th><td  colspan='4'>
+      <label class='btn'><input type='radio' name='gender' checked value="Male"> Male</label>
+      <label class='btn'><input type='radio' name='gender' value="Female"> Female</label>
+      <label class='btn'><input type='radio' name='gender' value="Transgender">   Transgender</label>
+  </td></tr>
+    <tr><th>Candidate Phone </th><td  colspan='4'><input type='number' name='phone' required class='form-control' placeholder='Phone'></td></tr>
+    <tr><th>ID Proof Type </th><td  colspan='4'>
+      <select name='id_proof' class='form-control'>
+          <option>Voter Id</option>
+          <option>PAN Card</option>
+          <option>Adhaar Card</option>
+          <option>Driving License</option>
+  
+      </select>
+    </tr>
+    <tr><th>ID Proof Number </th><td  colspan='4'><input name='id_proof_number' type='text' required class='form-control' placeholder='ID Proof Number'></td></tr>
+    <tr><td  colspan='10'><input name='agree' type='checkbox' required > I Agree for my information.</td></tr>
+    
+   <tr><th colspan='10'> <button type="submit" class="btn btn-primary mx-auto d-block">Book</button></th></tr>
+  </table>
+  {% csrf_token %}
+  </form>
+
+{% else %}
+
+<h2 class='text-center text-white bg-dark'>Succefully Booked Your Slot</h2>
+        <table class='table table-bordered'>
+          <tr><th>Slot Reference Number </th><td  >{{sb.id}}</td></tr>
+          <tr><th>Centre</th><td  >{{centre.id}} {{centre.name}} <br> {{centre.location}}, {{centre.district}} - {{centre.pin}}</td></tr>
+        <tr><th>Vaccine Type </th><td  >{{sb.dose_name}}</td></tr>
+        <tr><th>Slot Date </th><td  >{{sb.slot_date}}</td></tr>
+        <tr><th>Slot Timing </th><td  >{{sb.slot_time}}</td></tr>  
+        <tr><th>Candidate Name </th><td  >{{sb.name}}</td></tr>
+        <tr><th>Candidate Age </th><td  >{{sb.age}}</td></tr>
+        <tr><th>Candidate Gender </th><td  >{{sb.gender}}</td></tr>
+        <tr><th>Candidate Phone </th><td  >{{sb.contacts}}</td></tr>
+        <tr><th>ID Proof Type </th><td  >{{sb.id_proof_type}}</tr>
+        <tr><th>ID Proof Number </th><td  >{{sb.id_proof_number}}</td></tr>
+      </table>
+
+{% endif %}
+
+</div>
+</div>
+{% endblock content %}

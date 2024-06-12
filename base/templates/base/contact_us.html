@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}
+Contact Us
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center p-4 text-success">Contact us</h1>
+  <div class="row">
+  <div class="col-8"> 
+  <h3>Get In Touch</h3>
+  <div class="row">
+  <input type="text" placeholder="First Name" class='col-sm-5 m-1'>
+  <input type="text" placeholder="Last Name"  class='col-sm-5 m-1'>
+  <input type="text" placeholder="Email-ID" class='col-sm-5 m-1'>
+  <input type="text" placeholder="Phone Number" class='col-sm-5 m-1'>
+  <textarea class="col-sm-12 col-md-10 p-3 m-1"  rows="5" cols="5" placeholder="How Can I Help You..." ></textarea>
+  
+  <p class="col-sm-10" >
+    <h4> <input type="checkbox" name="" id=""> Your Consent</h4>
+   By checking the box above and submitting this form, you are providing personal information and consenting to its use in terms of the Privacy Policy. This allows us to respond to your request and to send you future communications relating to this request. We will not share your personal information with any organisation or person not affiliated with You may unsubscribe or withdraw your consent at any time. For further details, please see our Privacy Policy</p>
+   <button class="btn btn-primary col-sm-10" >Submit</button>
+   </div>
+  </div>
+  <div class="col-4">
+  
+  <h4>VACCINATION MANAGEMENT SYSTEM</h4>
+  <br>
+  <h6>Head Office Location:</h6>
+  <p>J-1, 2nd Floor, <br>New Mahavir Nagar <br>Janakpuri East Metro Station, <br>opposite Metro Pillar Number 559, <br>Janakpuri, Delhi, 110058</p>
+  <h5>Contact: <br><br><a href="#" class="h6">+91-9939939384</a></h5>
+  <h5>Helpline: <br><br><a href="#" class="h6 " >011-43062709</a></h5>
+  <h5>Social Media:<br><br><p>Facebook: <a class="h6" href="#"> https://www.facebook.com/vms</a></p></h5>
+  <h5><p>Instagram: <a class="h6" href="#">www.instagram.com/vms/</a></p></h5>
+  <h5><p>E-Mail: <a class="h6" href="#">  vms@gmail.com</a></p></h5>
+  <h5><p>Whatsapp: <a class="h6" href="#">https://wa.me/+919939939384</a></p></h5>
+  </div>
+  </div>
+  </div>
+
+{% endblock content %}

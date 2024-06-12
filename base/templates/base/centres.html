@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}
+Contact Us
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center p-4 text-success">Center List</h1>
+        <div class="row">
+{% for c in Page %}
+<div class='col-sm-3 card p-3' style='transform:scale(0.96)'>
+    <h4 class='text-primary'>{{c.name}}</h4>
+    <p class='text-success' > <i class='fa fa-user'></i> {{c.incharge}}</p>
+    
+    <p class='text-danger' > <i class='fa fa-map-marker'></i> {{c.location}},{{c.district}} - {{c.pin}} </p>
+    <p class='text-danger' > <i class='fa fa-phone'></i> {{c.incharge_phone}}</p>
+    <a href="book_slot?center={{c.id}}" class='btn'>Find Slots</a>
+    </div>
+{% endfor %}
+</div>
+</div>
+<div class='container'>
+<ul class="pagination pagination-lg">
+    {% if Page.has_previous %}
+    <li><a href="?page={{Page.previous_page_number}}" class='btn btn-primary'><i class="fa fa-arrow-circle-left"></i></a></li>
+    {% endif %}
+    <li><a href="?page={{Page.number}}" class='btn btn-primary'>{{Page.number}}</a></li>
+    {% if Page.has_next %}
+    <li><a href="?page={{Page.next_page_number}}" class='btn btn-primary' ><i class="fa fa-arrow-circle-right"></i></a></li>
+    {% endif %}
+
+  </ul>
+</div>
+{% endblock content %}

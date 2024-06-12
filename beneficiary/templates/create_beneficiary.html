@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 bg-light mt-5 mb-5" >
+            <h1 class="text-center text-success">Create New Account</h1>
+            <form method="post">
+              {% csrf_token %}
+              <div class="mb-3 mt-3">
+                    <h4>User Type</h4>
+                        <div>
+                            <label  class='p-2'><input type="radio" value="employee"  name='user_type' checked>Centres Employee</label>
+                            <label class='p-2'><input type="radio" value="beneficiary"  name='user_type'> Beneficiery</label>
+                        </div>
+                      </div>
+                      
+                <div class="mb-3 mt-3">
+                   <h5>User Id</h5>
+                  <input type="number" required class="form-control" placeholder="Enter User Id" name="userid">
+                </div>
+                <div class="mb-3">
+                        <h6>Password</h6>
+                <input type="password" required class="form-control" id="pwd" placeholder="Enter password" name="password">
+                </div>
+               
+                <button type="submit" class="btn btn-primary mx-auto d-block">Submit</button>
+              </form>
+              <h4 class="text-center m-4 text-danger">{{msg}}</h4>
+        </div>
+        
+    </div>
+  </div>
+
+{% endblock content %}

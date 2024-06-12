@@ -1,0 +1,111 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}
+Home Page
+{% endblock title %}
+
+{% block content %}
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/slider1.webp' %}" class="d-block" height="550" style="width:100%">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/slide2.jpg' %}"  class="d-block" height="550" style="width:100%">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/slide3.jpg' %}"  class="d-block" height="550" style="width:100%">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/slide4.jpg' %}"  class="d-block" height="550" style="width:100%">
+    </div>
+    <div class="carousel-item ">
+      <img src="{% static 'images/slide5.jpg' %}"  class="d-block" height="550" style="width:100%">
+    </div>
+   
+  </div>
+  
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
+<div class="container-fluid p-5">
+<h1 class=" text-center text-success">How to book your vaccination slot?</h1>
+<p class="text-center">Individuals can follow these steps to book covid vaccine slots</p>
+<div class="row">
+<div class="col-sm-3">
+  <div class="card p-3">
+    <div class="card-img-1"></div>
+    <b>Enter your location to get the list of nearest vaccination centres</b>
+  </div>
+</div>
+<div class="col-sm-3">
+  <div class="card p-3">
+    <div class="card-img-2"></div>
+    <b>Select vaccine slot date of your preference</b>
+  </div>
+</div>
+<div class="col-sm-3">
+  <div class="card p-3">
+    <div class="card-img-3"></div>
+    <b>Add individual details as per government id proof and continue to book your vaccine slot</b>
+  </div>
+</div>
+<div class="col-sm-3">
+  <div class="card p-3">
+    <div class="card-img-4"></div>
+    <b>Get appointment confirmation details on your registered mobile number</b>
+  </div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-sm-8">
+  <h2 class='text-success'>Get Your Children Vaccinated For Covid-19</h2>
+  <p>The Govt of India has made covid vaccination available for children between the age group of 15-18 years of age. Getting your children vaccinated is the best thing you can do to protect your child against Covid-19. Vaccination both online and walk-in are available for this age group. Health officials have announced that as of Feb 2022, the only vaccine option available for kids is Bharat Biotech’s Covaxin. It has been granted approval for restricted use in an emergency situation in the age group between 12 and 18 years.</p>
+  <h5  class='text-success'>Important Things To Know About Covid-19 Vaccine For Children:</h5>
+  <ul>
+    <li>The Covid-19 vaccine for children is safe and effective.</li>
+    <li>Some children report side effects such as fever and body pain after the vaccination.</li>
+      <li>These are normal signs that their body is building protection against the virus.</li>
+      <li>Children who have already suffered from Covid-19 are also eligible for the vaccination.</li>
+      <li> Vaccination for children can be done through the Cowin website following the same process.</li>
+        <li> Besides the Aadhaar Card and national identity cards, children can also use their class 10 ID card for registration.</li>
+  </ul>
+</div>
+<div class="col-sm-4">
+  <img src="{% static 'images/Group 9985.webp' %}" height="450">
+</div>
+<div class="col-sm-4 pt-5">
+  <img src="{% static 'images/vacc.webp'  %}" height="300">
+</div>
+<div class="col-sm-8  pt-5">
+  <h2  class='text-success'>Everything you need to know about Precautionary/ Booster Dose</h2>
+  <p>India started the precautionary dose, also known as the Booster Dose, when coronavirus infections in the country were once again on a steep upward trajectory. The Precautionary Dose is the third dose of vaccine given to people with compromised immune systems despite receiving the first two doses. Its goal is to strengthen the magnitude of protection by producing more antibodies. As of February 2022, the precautionary dose is for healthcare workers, frontline workers and senior citizens. There is no need for new registration for those eligible for the Precautionary Dose or the third dose of covid vaccine. Also, there no mixing of vaccines shall be done for the Booster Dose. Those who received two doses of Covishield (manufactured by Serum Institute of India) will receive the same vaccine as the third dose. The same goes for Covaxin (manufactured by Bharat Biotech International Ltd) and Sputnik.</p>
+</div>
+<div class="col-sm-8  pt-5">
+  <h2  class='text-success'>Download Your Covid Vaccination Certificate</h2>
+  <p>A Covid Vaccine Certificate is a document issued by the government as an assurance to the beneficiary on the type of vaccination along with the number of doses. For individuals who have taken just the first dose of the vaccine, the provisional Covid Vaccination Certificate also provides the next vaccination date. The certificate is an evidence for the beneficiary to have access to public places and in case of travel.</p>
+</div>
+<div class="col-sm-4 pt-5">
+  <img src="{% static 'images/Group 9984.webp'  %}" height="350">
+</div>
+</div>
+</div>
+
+{% endblock content %}

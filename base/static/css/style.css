@@ -1,0 +1,47 @@
+
+.card-img-1{
+    width: 100px;
+    height: 100px;
+    background: url(../images/sprits_cowin_slot.svg);
+    background-repeat:no-repeat;
+    background-position: -1405px 0;  
+   
+}
+.nav-link{
+    font-size:18px; font-weight: bold;
+    min-width: 150px;
+}
+
+.navbar{
+    height: 40px;
+}
+
+.card-img-2{
+    width: 90px;
+    height: 100px;
+    background: url(../images/sprits_cowin_slot.svg);
+    background-repeat:no-repeat;
+    background-position: -1314px 0;  
+   
+}
+
+
+.card-img-3{
+    width: 90px;
+    height: 100px;
+    background: url(../images/sprits_cowin_slot.svg);
+    background-repeat:no-repeat;
+    background-position: -1228px 0;  
+}
+
+.card-img-4{
+        width: 90px;
+        height: 100px;
+        background: url(../images/sprits_cowin_slot.svg);
+        background-repeat:no-repeat;
+        background-position: -1150px 0;  
+}
+ a {
+    font-size: 20px;
+    color: red;
+}

@@ -1,0 +1,156 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+        section{
+            
+            
+            width: 70%;
+            margin: auto;
+            height: 120vh;
+        }
+        .top-line{
+            
+            height: 70px;
+            text-align: center
+        }
+        .top-line p{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin: 0;
+        }
+        .top-line h1{
+            font-family: Arial, Helvetica, sans-serif;
+            color: #4b5f75;
+        }
+    
+        tr{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        td{
+            
+            text-align: left;
+            padding: 5px;   
+            padding-left: 50px;          
+            
+        }
+        .heading{
+            color: #4b5f75;
+            font-weight: bold;
+        }
+    </style>
+    <div class="container-fluid row">
+        <div class="col-sm-1">
+            
+        </div>
+        <div class="col-sm-10 bg-light mt-5 mb-5" >
+            
+            {% if status == True %}
+            <section>
+                <div class="top-line">
+                    <img src="{% static 'images/ashok.png' %}" width='70'>
+                    <p>Ministry of Health & Family Welfare <br>Goverment of India</p>
+                    <h1>Provisional Certificate for COVID-19 Vaccination</h1>
+                    <table>
+                        <td class="heading"> <u> Benifiiary Details</u></td>                
+                        <tr>
+                            <td>Benifiiary Name / लाभार्थी का नाम</td>
+                            <td>{{slot.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Age / उम्र</td>
+                            <td>{{slot.age}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender / लिंग</td>
+                            <td>{{slot.gender}}</td>
+                        </tr>
+                        <tr>
+                            <td>ID Verified / पहचान पत्र सत्यपित</td>
+                            <td>{{slot.id_proof_type}} - {{slot.id_proof_number}}</td>
+                        </tr>
+                        <tr>
+                            <td>Unique Health ID (UHID)</td>
+                            <td>{{slot.id}}</td>
+                        </tr>
+                        <tr>
+                            <td>Benifiiary Reference ID</td>
+                            <td>{{cno}}</td>
+                        </tr>
+        
+                        <td class="heading"> <u> Vaccination Details</u></td>                
+        
+                        <tr>
+                            <td>Vaccine Name / वैक्सीन का नाम</td>
+                            <td>{{slot.dose_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Date of Dose / खुराक की तारीख</td>
+                            <td>{{slot.slot_date}}</td>
+                        </tr>
+                       
+                        <tr>
+                            <td>Vaccinated by / टीका लगाने वाले का नाम</td>
+                            <td>{{user.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Vaccination at / टीकाकरण का स्थान</td>
+                            <td>{{center.id}}. {{center.name}}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                    <img src="{% static 'images/qr_img.png' %}" width='100'>
+                                
+                            </td>
+                        </tr>                        
+                    </table>
+    
+                </div>
+                
+            </section>
+        
+        
+        
+                    {% else %}
+           <h1 class="text-center text-success">Dowload Certificate</h1>
+     
+            <form method="post">
+              {% csrf_token %}
+              <div class="mb-3 mt-3">
+                
+                <label  class='btn'><input type="radio" name="by" value="slotno" checked> By Slot Number</label>          
+                <label  class='btn'><input type="radio" name="by" value="phone"> By Phone</label>
+             </div>
+                <div class="mb-3 mt-3">
+                   <h5>Slot Number / Phone</h5>
+                  <input required type="number"  class="form-control" placeholder="Enter Slot Number or Phone" name="slotno">
+                </div>
+                <div class="mb-3">
+                  <h6>Date</h6>
+                  <input type="date" name="date" required class="form-control">
+                </div>
+                <div class="mb-3">
+                  <h6>Id Proof Number</h6>
+                  <input type="text" name="id_proof_number" required class="form-control">
+                </div>
+                           
+                <button type="submit" class="btn btn-success form-control">Get Certificate</button>
+              </form>
+            
+              <h4 class="text-center m-4 text-danger">{{msg}}</h4>
+    
+            {% endif %}
+            
+             
+        </div>
+        
+    </div>
+       
+    </div>
+    
+
+
+{% endblock content %}
